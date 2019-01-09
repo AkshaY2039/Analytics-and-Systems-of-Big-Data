@@ -3,9 +3,9 @@ Analytics and Systems of Big Data Lab Work
 -	Course Code : COM406P
 -	Course Faculty : Dr. Sivaselvan B
 
-Group No : 
--	Gowtham Munukutla (CED15I019)
+Group No :
 -	Viraj Sonatkar	(CED15I015)
+-	Gowtham Munukutla (CED15I019)
 -	Akshay Kumar	(CED15I031)
 -- --
 
