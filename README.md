@@ -9,7 +9,7 @@ Group No :
 -	Akshay Kumar	(CED15I031)
 -- --
 
-##	Practice Set 01 : *Deadline - 16 Jan 2019*
+##	Practice Set 01 : *Deadline - 27 Jan 2019*
 1.	Use Python / R library for
 	*	Apriori (ARM) : *by testing it for atleast 5 measures of pattern evaluation / interestingness other than Support and Confidence*
 		*	[Selecting the right interestingness measure for association patterns](https://dl.acm.org/citation.cfm?id=775053)
@@ -40,14 +40,15 @@ Group No :
 7.	Explore data preprocessing support in Python / R *(atleast 5)*
 	*	Data Smoothing
 	*	Data Binning
-8.	Try out all efficient variants of Apriori
+8.	Explore Python / R library support for ECLAT (Equivalence CLAss Transformation)
+-- --
+
+##	Practice Set 02 : *Deadline - 10 Feb 2019*
+1.	Try out all efficient variants of Apriori
 	*	Hashing
 	*	Transaction Reduction
 	*	Partitioning
-9.	Explore Python / R library support for ECLAT (Equivalence CLAss Transformation)
--- --
-
-##	Practice Set 02 : *Deadline - *
+2.	Implement A-Close as well as Pincer Search. Look at 2 more algorithms for same and implement them. E.g. CHARM & MAFIA.
 -- --
 
 ##	Dataset Source
