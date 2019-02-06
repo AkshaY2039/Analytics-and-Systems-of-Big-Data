@@ -17,6 +17,7 @@ Batch No : 08
 		*	Conviction
 		*	Leverage
 		*	Collective Strength
+		*	Correlation
 	*	Bayes or Decision Tree (Classifier) : *All measures of classifier accuracy*
 		*	F1 Score
 		*	Specificity
