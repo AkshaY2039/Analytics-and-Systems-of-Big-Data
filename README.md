@@ -38,6 +38,7 @@ Batch No : 08
 6.	Explore all information evaluation measures of Decision Tree *(atleast 3)*
 	*	Shanon's Entropy Theorem (Information Gain)
 7.	Explore data preprocessing support in Python / R *(atleast 5)*
+	*	[Data preprocessing Techniques link](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=2ahUKEwjpvqqopqbgAhXMpI8KHQqHCH0QFjAAegQIBxAC&url=http%3A%2F%2Fiasri.res.in%2Febook%2Fwin_school_aa%2Fnotes%2FData_Preprocessing.pdf&usg=AOvVaw3t4lYAC8MKJiW7-L_vq0tZ)
 	*	Data Smoothing
 	*	Data Binning
 8.	Explore Python / R library support for ECLAT (Equivalence CLAss Transformation)
