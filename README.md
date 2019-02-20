@@ -12,11 +12,12 @@ Batch No : 08
 ##	Practice Set 01 : *Deadline - 27 Jan 2019*
 1.	Use Python / R library for
 	*	Apriori (ARM) : *by testing it for atleast 5 measures of pattern evaluation / interestingness other than Support and Confidence*
+		*	[Selecting the right interestingness measure for association patterns](https://dl.acm.org/citation.cfm?id=775053)
 		*	Lift
 		*	Conviction
 		*	Leverage
 		*	Collective Strength
-		*	Correlation
+		*	Added Value
 	*	Bayes or Decision Tree (Classifier) : *All measures of classifier accuracy*
 		*	F1 Score
 		*	Specificity
