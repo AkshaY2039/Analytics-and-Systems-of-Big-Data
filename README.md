@@ -12,7 +12,6 @@ Batch No : 08
 ##	Practice Set 01 : *Deadline - 27 Jan 2019*
 1.	Use Python / R library for
 	*	Apriori (ARM) : *by testing it for atleast 5 measures of pattern evaluation / interestingness other than Support and Confidence*
-		*	[Selecting the right interestingness measure for association patterns](https://dl.acm.org/citation.cfm?id=775053)
 		*	Lift
 		*	Conviction
 		*	Leverage
@@ -40,8 +39,8 @@ Batch No : 08
 	*	Shanon's Entropy Theorem (Information Gain)
 7.	Explore data preprocessing support in Python / R *(atleast 5)*
 	*	[Data Preprocessing Techniques for Data Mining - IASRI](http://iasri.res.in/ebook/win_school_aa/notes/Data_Preprocessing.pdf)
-		*	Data Smoothing
-		*	Data Binning
+	*	Data Smoothing
+	*	Data Binning
 8.	Explore Python / R library support for ECLAT (Equivalence CLAss Transformation)
 -- --
 
@@ -50,7 +49,7 @@ Batch No : 08
 	*	Hashing
 	*	Transaction Reduction
 	*	Partitioning
-2.	Implement A-Close as well as Pincer Search. Look at 2 more algorithms for same and implement them. E.g. CHARM & MAFIA.
+2.	Implement A-Close as well as Pincer Search. Look at 2 more algorithms for same and implement them. (Or use library if found) E.g. CHARM & MAFIA.
 -- --
 
 ##	Dataset Source

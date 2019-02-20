@@ -1,8 +1,6 @@
 #	Apriori Algorithm for Association Rule Mining
 #		Batch No. 08 - CED15I015, CED15I019, CED15I031
 
-""" Outline :  """
-
 import numpy
 import csv
 from apyori import apriori
