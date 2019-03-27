@@ -1,5 +1,6 @@
 #	Mid Sem Lab Exam
 -	Date : 27 March 2019
+-	CED15I031
 
 ##	Problem Statement
 -	[Mushroom Data](https://archive.ics.uci.edu/ml/datasets/Mushroom) @ UCI: https://archive.ics.uci.edu/ml/datasets/Mushroom
