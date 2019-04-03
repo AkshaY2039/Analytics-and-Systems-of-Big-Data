@@ -1,0 +1,12 @@
+digraph Tree {
+node [shape=box, style="filled", color="black"] ;
+0 [label="odor <= 0.5\ngini = 0.175\nsamples = 3000\nvalue = [291, 2709]\nclass = e", fillcolor="#399de5e4"] ;
+1 [label="gini = 0.0\nsamples = 256\nvalue = [256, 0]\nclass = p", fillcolor="#e58139ff"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label="odor <= 3.5\ngini = 0.025\nsamples = 2744\nvalue = [35, 2709]\nclass = e", fillcolor="#399de5fc"] ;
+0 -> 2 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+3 [label="gini = 0.0\nsamples = 2709\nvalue = [0, 2709]\nclass = e", fillcolor="#399de5ff"] ;
+2 -> 3 ;
+4 [label="gini = 0.0\nsamples = 35\nvalue = [35, 0]\nclass = p", fillcolor="#e58139ff"] ;
+2 -> 4 ;
+}

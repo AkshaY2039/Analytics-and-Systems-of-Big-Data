@@ -30,8 +30,6 @@ Batch No : 08
 		*	Clustering
 		*	Parity of Clusters
 2.	Explore all FIM (Frequent Itemset Mining) library support in Python / R : *Atleast 5 algorithms other than Apriori*
-	*	SciKit Learn - No Support for FIM
-	*	
 3.	Implement DIC (Dynamic Itemset Counting) in Python / R
 4.	Implement efficient version of K-Means / Hierarchical (Dendrogram)
 	*	*Clue : Min Heap data structure*
