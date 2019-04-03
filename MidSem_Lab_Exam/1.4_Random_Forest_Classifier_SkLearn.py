@@ -1,8 +1,8 @@
-#	Naive Bayesian Classifier - SciKit Learn
+#	Random Forest Classifier - SciKit Learn
 
 import numpy
 import csv
-from sklearn.naive_bayes import ComplementNB
+from sklearn.ensemble import RandomForestClassifier
 
 dataAttributes = []
 dataClass = []
@@ -58,12 +58,33 @@ with open ('./agaricus-lepiota.csv') as csvdata:
 			dataClass.append (Attributes[str (classIndex)][row[classIndex]])
 		except ValueError: 
 			pass
-feats = ["cap-shape","cap-surface","cap-color","bruises?","odor","gill-attachment","gill-spacing","gill-size","gill-color","stalk-shape","stalk-root","stalk-surface-above-ring","stalk-surface-below-ring","stalk-color-above-ring","stalk-color-below-ring","veil-type","veil-color","ring-number","ring-type","spore-print-color","population","habitat"]
+feats = [	"cap-shape",
+			"cap-surface",
+			"cap-color",
+			"bruises?",
+			"odor",
+			"gill-attachment",
+			"gill-spacing",
+			"gill-size",
+			"gill-color",
+			"stalk-shape",
+			"stalk-root",
+			"stalk-surface-above-ring",
+			"stalk-surface-below-ring",
+			"stalk-color-above-ring",
+			"stalk-color-below-ring",
+			"veil-type",
+			"veil-color",
+			"ring-number",
+			"ring-type",
+			"spore-print-color",
+			"population",
+			"habitat"]
 
 print ("Features: ", feats)
 print ("Class Labels: ", list (classNames.keys ()))
 
-print ("Done Loading Data\n")
+print ("Done Loading Data")
 
 # seperating test and training data
 testDataAttributes = numpy.asarray (dataAttributes [3000:])
@@ -71,15 +92,17 @@ checkDataClass = numpy.asarray (dataClass[3000:])
 dataAttributes = numpy.asarray (dataAttributes[:3000])
 dataClass = numpy.asarray (dataClass[:3000])
 
-print ("Classifier training Started")
-cNBClf = ComplementNB ()
-cNBClf = cNBClf.fit (dataAttributes, dataClass)
-print ("Classifier training Finished\n")
+#training classifier
+print ("\n\nClassifier training Started")
+rFClf = RandomForestClassifier(n_estimators=2, random_state=1)
+rFClf.fit (dataAttributes, dataClass)
+print ("Classifier training Finished")
 
-classPred = cNBClf.predict (testDataAttributes)
+predClass = rFClf.predict(testDataAttributes)
+
+# measuring classifier accuracy
 totalPoints = float (testDataAttributes.shape[0])
-mislabeled = float ((checkDataClass == classPred).sum())
-
+mislabeled = float ((checkDataClass == predClass).sum())
 print ("Number of mislabeled points out of total %d points : %d" % (totalPoints, mislabeled))
 print ("Classifier Model Accuracy: ", (1 - (mislabeled / totalPoints)) * 100.0)
 
@@ -89,7 +112,7 @@ print ("\n\nClassifying testDataAttributes [", randomIndex, "]")
 record = testDataAttributes[randomIndex]
 print (record)
 record = record.reshape (1, -1)
-classPredSingle = cNBClf.predict (record)
+classPredSingle = rFClf.predict (record)
 print ("Predicted Class Label: ")
 print (classPredSingle)
 print ("Actual Class Label : ")

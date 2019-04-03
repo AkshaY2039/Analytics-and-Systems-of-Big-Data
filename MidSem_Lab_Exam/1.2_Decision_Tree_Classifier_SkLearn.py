@@ -67,10 +67,10 @@ print ("Class Labels: ", list (classNames.keys ()))
 print ("Done Loading Data\n")
 
 # seperating test and training data
-testDataAttributes = numpy.asarray (dataAttributes [6000:])
-checkDataClass = numpy.asarray (dataClass[6000:])
-dataAttributes = numpy.asarray (dataAttributes[:6000])
-dataClass = numpy.asarray (dataClass[:6000])
+testDataAttributes = numpy.asarray (dataAttributes [3000:])
+checkDataClass = numpy.asarray (dataClass[3000:])
+dataAttributes = numpy.asarray (dataAttributes[:3000])
+dataClass = numpy.asarray (dataClass[:3000])
 
 print ("Classifier training Started")
 dTreeClf = tree.DecisionTreeClassifier()
@@ -93,7 +93,8 @@ print ("Classifier Model Accuracy: ", (1 - (mislabeled / totalPoints)) * 100.0)
 print ("convert dTree.dot to dTree.pdf using 'dot -Tpdf dTree.dot -o dTree.pdf'")
 
 # checking with random record
-randomIndex = 100
+randomIndex = 1251
+print ("\n\nClassifying testDataAttributes [", randomIndex, "]")
 record = testDataAttributes[randomIndex]
 print (record)
 record = record.reshape (1, -1)

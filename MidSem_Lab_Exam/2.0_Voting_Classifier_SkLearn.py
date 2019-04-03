@@ -1,8 +1,16 @@
-#	Nearest Neighbors Classifier - SciKit Learn
+#	Voting Classifier - SciKit Learn
 
 import numpy
 import csv
+from sklearn.naive_bayes import ComplementNB
 from sklearn import neighbors
+import graphviz
+from sklearn import tree
+from sklearn.linear_model import LogisticRegression
+from sklearn.naive_bayes import GaussianNB
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import cross_val_score
+from sklearn.ensemble import VotingClassifier
 
 dataAttributes = []
 dataClass = []
@@ -89,34 +97,59 @@ print ("Done Loading Data")
 n_neighbors = 50
 
 # seperating test and training data
-testDataAttributes = numpy.asarray (dataAttributes [3000:])
-checkDataClass = numpy.asarray (dataClass[3000:])
-dataAttributes = numpy.asarray (dataAttributes[:3000])
-dataClass = numpy.asarray (dataClass[:3000])
+# testDataAttributes = numpy.asarray (dataAttributes [3000:])
+# checkDataClass = numpy.asarray (dataClass[3000:])
+# dataAttributes = numpy.asarray (dataAttributes[:3000])
+# dataClass = numpy.asarray (dataClass[:3000])
 
-for weights in ['uniform', 'distance']:
-	#training classifier
-	print ("\n\nClassifier training Started for %s " % (weights))
-	nNClf = neighbors.KNeighborsClassifier (n_neighbors, weights = weights)
-	nNClf.fit (dataAttributes, dataClass)
-	print ("Classifier training Finished for %s \n" % (weights))
+cNBClf = ComplementNB ()
 
-	predClass = nNClf.predict(testDataAttributes)
+dTreeClf = tree.DecisionTreeClassifier()
 
-	# measuring classifier accuracy
-	totalPoints = float (testDataAttributes.shape[0])
-	mislabeled = float ((checkDataClass == predClass).sum())
-	print ("Number of mislabeled points out of total %d points : %d" % (totalPoints, mislabeled))
-	print ("Classifier Model Accuracy: ", (1 - (mislabeled / totalPoints)) * 100.0)
+gNBClf = GaussianNB()
 
-	# checking with random record
-	randomIndex = 1251
-	print ("\n\nClassifying testDataAttributes [", randomIndex, "]")
-	record = testDataAttributes[randomIndex]
-	print (record)
-	record = record.reshape (1, -1)
-	classPredSingle = nNClf.predict (record)
-	print ("Predicted Class Label: ")
-	print (classPredSingle)
-	print ("Actual Class Label : ")
-	print (checkDataClass[randomIndex])
+nNClf = neighbors.KNeighborsClassifier (n_neighbors, weights = 'distance')
+
+lRCLf = LogisticRegression(solver='liblinear')
+
+rFClf = RandomForestClassifier(n_estimators=2, random_state=1)
+
+vClf = VotingClassifier(estimators=[('cnb', cNBClf), ('dt', dTreeClf), ('nn', nNClf), ('lr', lRCLf), ('rf', rFClf), ('gnb', gNBClf)], voting='hard')
+
+for clf, label in zip([cNBClf, dTreeClf, nNClf, lRCLf, rFClf, gNBClf, vClf], ['Complement Naive Bayes', 'Decision Tree', 'Nearest Neighbors', 'Logistic Regression', 'Random Forest', 'Gaussian Naive Bayes', 'Ensemble/Voting']):
+	scores = cross_val_score(clf, dataAttributes, dataClass, cv=5, scoring='recall')
+	# scoring can accept 'accuracy', 'average_precision', 'balanced_accuracy', 'f1', 'recall' etc
+	# check these at https://scikit-learn.org/stable/modules/model_evaluation.html
+	print("Accuracy: %0.2f (+/- %0.2f) [%s]" % (scores.mean(), scores.std(), label))
+
+# checking with random record
+# randomIndex = 8121
+# print ("\n\nClassifying dataAttributes [", randomIndex, "]")
+# record = numpy.asarray (dataAttributes[randomIndex])
+# print (record)
+# print ("Actual Class Label : %d" % dataClass [randomIndex])
+# record = record.reshape (1, -1)
+# # for clf, label in zip([cNBClf, dTreeClf, nNClf, lRCLf, rFClf, gNBClf, vClf], ['Complement Naive Bayes', 'Decision Tree', 'Nearest Neighbors', 'Logistic Regression', 'Random Forest', 'Gaussian Naive Bayes', 'Ensemble/Voting']):
+# # 	classPredSingle = (clf.predict (record))
+# #	 print("Predicted Class = %d [%s]" % (classPredSingle, label))
+# print ("predicted by Complement Naive Bayes")
+# cNBClf.fit (dataAttributes, dataClass)
+# print (cNBClf.predict (record))
+# print ("predicted by Decision Tree")
+# dTreeClf.fit (dataAttributes, dataClass)
+# print (dTreeClf.predict (record))
+# print ("predicted by Nearest Neighbors")
+# nNClf.fit (dataAttributes, dataClass)
+# print (nNClf.predict (record))
+# print ("predicted by Logistic Regression")
+# lRCLf.fit (dataAttributes, dataClass)
+# print (lRCLf.predict (record))
+# print ("predicted by Random Forest")
+# rFClf.fit (dataAttributes, dataClass)
+# print (rFClf.predict (record))
+# print ("predicted by Gaussian Naive Bayes")
+# gNBClf.fit (dataAttributes, dataClass)
+# print (gNBClf.predict (record))
+# print ("predicted by Voting")
+# vClf.fit (dataAttributes, dataClass)
+# print (vClf.predict (record))
