@@ -11,4 +11,11 @@
 
 ##	Solution
 1.	Classifiers tested
-	-	
+	-	[Complement Naive Bayes Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.ComplementNB.html) from SciKit Learn
+	-	[Decision Tree Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html) from SciKit Learn
+	-	[Nearest Neighbors Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html) from SciKit Learn
+	-	[Random Forest Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) from SciKit Learn
+2.	Used [Voting Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.VotingClassifier.html) from SciKitLearn
+	-	Made use of [Cross Vhttps://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.htmlalidation](https://scikit-learn.org/stable/modules/cross_validation.html) i.e. cross_val_score() and [Model Evaluation Parameters](https://scikit-learn.org/stable/modules/model_evaluation.html)
+	-	To compare any parameter of these classifiers, just change the scoring parameter in cross_val_score function @ Line 120
+3.	
