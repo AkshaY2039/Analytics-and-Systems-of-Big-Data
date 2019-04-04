@@ -36,6 +36,7 @@ Batch No : 08
 5.	Implement any one ARBC (Association Rule Based Classifiers) algorithm
 	*	E.g. CMAR
 	*	[Classification Based on Association Rules Algorithm](https://rdrr.io/cran/arulesCBA/man/CBA.html)
+	*	[Rules-based Software for Classification](https://www.kdnuggets.com/software/classification-rules.html)
 6.	Explore all information evaluation measures of Decision Tree *(atleast 3)*
 	*	Shanon's Entropy Theorem (Information Gain)
 7.	Explore data preprocessing support in Python / R *(atleast 5)*
@@ -65,3 +66,6 @@ Batch No : 08
 -	[Kaggle](https://www.kaggle.com/)
 -	Random Generated Dataset
 -- --
+
+##	Other References
+-	[ml-algorithms-on-scikit-and-keras](https://github.com/sourcecode369/ml-algorithms-on-scikit-and-keras)
