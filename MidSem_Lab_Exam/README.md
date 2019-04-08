@@ -12,17 +12,29 @@
 ##	Solution
 1.	Classifiers tested
 	-	[Complement Naive Bayes Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.ComplementNB.html) from SciKit Learn
-	>	Output
-	>	![OP_1.1.png](./Output_Screenshots/OP_1.1.png)
+		>	Output
+		>	![OP_1.1.png](./Output_Screenshots/OP_1.1.png)
 	-	[Decision Tree Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html) from SciKit Learn
+		>	Output
+		>	![OP_1.2.png](./Output_Screenshots/OP_1.2.png)
 	-	[Nearest Neighbors Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html) from SciKit Learn
+		>	Output
+		>	![OP_1.3.png](./Output_Screenshots/OP_1.3.png)
 	-	[Random Forest Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) from SciKit Learn
+		>	Output
+		>	![OP_1.4.png](./Output_Screenshots/OP_1.4.png)
 2.	Used [Voting Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.VotingClassifier.html) from SciKitLearn
+	>	Output
+	>	![OP_2.0.png](./Output_Screenshots/OP_2.0.png)
 	-	Made use of [Cross Validation](https://scikit-learn.org/stable/modules/cross_validation.html) i.e. cross_val_score() and [Model Evaluation Parameters](https://scikit-learn.org/stable/modules/model_evaluation.html)
 	-	To compare any parameter of these classifiers, just change the scoring parameter in cross_val_score function @ Line 120
+		>	![ScoringParameter.png](./Output_Screenshots/ScoringParameter.png)
 3.	ARBC Implementation referred from [Big Data - Ruchi09](https://github.com/ruchi09/Big-data)
 	-	Step 1 : [Transform data](./Transform_Data.py) so that similar value notaions in different attributes are considered as different, else the rule generation is affected
 	-	Step 2 : [Selecting K Best attributes](./K_Best_and_Apriori.py) as 22 attributes will cause overfitting for the classifier
 	-	Step 3 : [Run ARBC](./3.0_Association_Rule_Based_Classifier.py) to find rules and their supports and confidence
 		-	Step 3.1 : Find the Rule with minimum error and then use it to find the class.
-4.	
+	>	Output
+	>	![OP_3.0.1.png](./Output_Screenshots/OP_3.0.1.png)
+	>	![OP_3.0.2.png](./Output_Screenshots/OP_3.0.2.png)
+4.	Comparing ARBC
