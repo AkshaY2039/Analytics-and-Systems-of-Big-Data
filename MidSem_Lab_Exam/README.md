@@ -37,4 +37,11 @@
 	>	Output
 	>	![OP_3.0.1.png](./Output_Screenshots/OP_3.0.1.png)
 	>	![OP_3.0.2.png](./Output_Screenshots/OP_3.0.2.png)
-4.	Comparing ARBC
+4.	Comparing ARBC with Random Forest Classifier
+	-	Step 1 : Run ARBC and find the misclassified points
+	-	Step 2 : Run Random Forest Classifier and see the number of misclassified points.
+	>	![OP_4.0.png](./Output_Screenshots/OP_4.0.png)
+	-	Step 3 : Compare the error rate
+		`Error rate in ARBC : (3700 / 8124) * 100 = 45.54
+		Error rate in RFC : (3624 / 5124) * 100 = 70.73`
+	-	As we can see above the error rate for ARBC is less implying more accuracy. But the time taken for the algorithm to run is high, and the scans happening over the transaction set is very higher that the RFC.
