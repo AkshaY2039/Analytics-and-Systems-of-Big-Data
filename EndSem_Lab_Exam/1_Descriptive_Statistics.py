@@ -734,14 +734,20 @@ plt.show()
 dataframe.plot.bar()
 plt.show()
 
-dataframe.plot.hist(bins=20)
+dataframe.plot.hist(bins=50)
+plt.show()
+
+dataframe.plot.hist()
+plt.show()
+
+dataframe.plot.area(stacked=False)
 plt.show()
 
 dataframe.plot.box()
 plt.show()
 
-dataframe.plot.pie(x=0, y=1)
-plt.show()
+# dataframe.plot.pie(x=0, y=1)
+# plt.show()
 
 dataframe.plot.scatter(x=0, y=1)
 plt.show()
