@@ -38,4 +38,9 @@
 		>	![OP_2.3.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_2.3.png)
 3.	Regression using SciKitLearn
 	-	[Generalized Linear Models](https://scikit-learn.org/stable/modules/linear_model.html#generalized-linear-models)	
-	-	
+	-	[Polynomial Features Preprocessing](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.PolynomialFeatures.html)
+	-	[Ridge Regression using polynomial Attributes](https://scikit-learn.org/stable/auto_examples/linear_model/plot_polynomial_interpolation.html)
+	-	Output :
+		>	![OP_1.10.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_3.1.png)
+4.	Association Rule between Urban and Rural Mortality Rate
+	

@@ -664,11 +664,75 @@ Attributes = {
 	"644": {},	# ZZ_Sex_Ratio_At_Birth_Urban_Upper_Limit
 }
 
-entityIndex = [22,23,25,26,37,38,40,41,43,44,58,59,61,62,112,113,115,116,118,119,202,203,205,206,208,209,211,212,214,215,217,218,220,221,223,224,226,227,229,230,232,233,235,236,238,239,241,242,244,245,247,248,250,251,253,254,256,257,259,260,262,263,265,266,268,269,271,272,274,275,277,278,280,281,283,284,286,287,289,290,292,293,295,298,299,310,311,322,323,325,331,332,334,335,337,338,343,344,445,446,448,449,594,597,609]
+entityIndex = [22,23,25,26,
+				37,38,40,41,
+				43,44,58,59,
+				61,62,112,113,
+				115,116,118,119,
+				202,203,205,206,
+				208,209,211,212,
+				214,215,217,218,
+				220,221,223,224,
+				226,227,229,230,
+				232,233,235,236,
+				238,239,241,242,
+				244,245,247,248,
+				250,251,253,254,
+				256,257,259,260,
+				262,263,265,266,
+				268,269,271,272,
+				274,275,277,278,
+				280,281,283,284,
+				286,287,289,290,
+				292,293,295,298,
+				299,310,311,322,
+				323,325,331,332,
+				334,335,337,338,
+				343,344,445,446,
+				448,449,
+				594,597,609
+				]
 
-attributesIndexIMR = [22,25,37,40,43,58,61,112,115,118,202,205,208,211,214,217,220,223,226,229,232,235,238,241,244,247,250,253,256,259,262,265,268,271,274,277,280,283,286,289,292,298,310,322,331,334,337,343,445,448]
-attributesIndexIMU = [23,26,38,41,44,59,62,113,116,119,203,206,209,212,215,218,221,224,227,230,233,236,239,242,245,248,251,254,257,260,263,266,269,272,275,278,281,284,287,290,293,299,311,323,332,335,338,344,446,449]
-attributesIndexU5MR = [22,25,37,40,43,58,61,112,115,118,202,205,208,211,214,217,220,223,226,229,232,235,238,241,244,247,250,253,256,259,262,265,268,271,274,277,280,283,286,289,295,310,325]
+attributesIndexIMR = [22,# 25,37,40,
+						43,# 58,61,112,
+						115,# 118,202,205,
+						208,# 211,214,217,
+						220,# 223,226,229,
+						232,# 235,238,241,
+						244,# 247,250,253,
+						256,# 259,262,265,
+						268,# 271,274,277,
+						280,# 283,286,289,
+						292,# 298,310,322,
+						331,# 334,337,343,
+						445,# 448
+						]
+attributesIndexIMU = [23,# 26,38,41,
+						44,# 59,62,113,
+						116,# 119,203,206,
+						209,# 212,215,218,
+						221,# 224,227,230,
+						233,# 236,239,242,
+						245,# 248,251,254,
+						257,# 260,263,266,
+						269,# 272,275,278,
+						281,# 284,287,290,
+						293,# 299,311,323,
+						332,# 335,338,344,
+						446,# 449
+						]
+attributesIndexU5MR = [22,# 25,37,40,
+						43,# 58,61,112,
+						115,# 118,202,205,
+						208,# 211,214,217,
+						220,# 223,226,229,
+						232,# 235,238,241,
+						244,# 247,250,253,
+						256,# 259,262,265,
+						268,# 271,274,277,
+						280,# 283,286,289,
+						295,# 310,325
+						]
 
 IndexIMR = 594
 IndexIMU = 597
@@ -691,32 +755,32 @@ with open ('./HealthIndicatorONE.csv') as csvdata:
 			InfMortRural.append (Attributes[str (IndexIMR)][row[IndexIMR]])
 			for i in attributesIndexIMU: 
 				datarow.append (Attributes[str (i)][row[i]])
-			dataAttrInfMortRural.append (datarow)
+			dataAttrInfMortUrban.append (datarow)
 			InfMortUrban.append (Attributes[str (IndexIMU)][row[IndexIMU]])
 			for i in attributesIndexU5MR: 
 				datarow.append (Attributes[str (i)][row[i]])
-			dataAttrInfMortRural.append (datarow)
+			dataAttrU5MortRural.append (datarow)
 			U5MortRural.append (Attributes[str (IndexU5MR)][row[IndexU5MR]])
 		except ValueError: 
 			pass
-print ("Done Loading Data\n")
+print ("Done Loading Data")
 
 # Going for model to predict Infant Mortality Rate Rural Areas
-testIMR = numpy.asarray (dataAttrInfMortRural [200:])
-chkIMR = numpy.asarray (InfMortRural[200:])
-dataAttrInfMortRural = numpy.asarray (dataAttrInfMortRural[:200])
-InfMortRural = numpy.asarray (InfMortRural[:200])
+testIMR = numpy.asarray (dataAttrInfMortRural [272:])
+chkIMR = numpy.asarray (InfMortRural[272:])
+dataAttrInfMortRural = numpy.asarray (dataAttrInfMortRural[:272])
+InfMortRural = numpy.asarray (InfMortRural[:272])
 
 # poly = PolynomialFeatures (2)
 # poly_TestIMR = (poly.fit_transform (testIMR))
 
-model = make_pipeline (PolynomialFeatures(1), Ridge())
-model.fit(dataAttrInfMortRural, InfMortRural)
-predVal = model.predict(testIMR)
+model1 = make_pipeline (PolynomialFeatures(1), Ridge())
+model1.fit(dataAttrInfMortRural, InfMortRural)
+predVal1 = model1.predict(testIMR)
 
-print ("predict Infant Mortality Rate Rural Areas")
-for i in range (0, 84):
-	print (chkIMR[i], "\t", predVal[i])
+print ("\npredict Infant Mortality Rate Rural Areas")
+for i in range (0, 12):
+	print (chkIMR[i], "\t", predVal1[i])
 
 # Going for model to predict Infant Mortality Rate Urban Areas
 testIMU = numpy.asarray (dataAttrInfMortUrban [200:])
@@ -724,8 +788,24 @@ chkIMU = numpy.asarray (InfMortUrban[200:])
 dataAttrInfMortUrban = numpy.asarray (dataAttrInfMortUrban[:200])
 InfMortUrban = numpy.asarray (InfMortUrban[:200])
 
+model2 = make_pipeline (PolynomialFeatures(1), Ridge())
+model2.fit(dataAttrInfMortUrban, InfMortUrban)
+predVal2 = model2.predict(testIMU)
+
+print ("\npredict Infant Mortality Rate Urban Areas")
+for i in range (0, 12):
+	print (chkIMU[i], "\t", predVal2[i])
+
 # Going for model to predict Under 5 years Mortality Rate Rural Areas
 testU5MR = numpy.asarray (dataAttrU5MortRural [200:])
 chkU5MR = numpy.asarray (U5MortRural[200:])
 dataAttrU5MortRural = numpy.asarray (dataAttrU5MortRural[:200])
 U5MortRural = numpy.asarray (U5MortRural[:200])
+
+model3 = make_pipeline (PolynomialFeatures(1), Ridge())
+model3.fit(dataAttrU5MortRural, U5MortRural)
+predVal3 = model3.predict(testU5MR)
+
+print ("\npredict Under 5 years Mortality Rate Rural Areas")
+for i in range (0, 12):
+	print (chkU5MR[i], "\t", predVal3[i])
