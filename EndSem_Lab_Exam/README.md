@@ -36,4 +36,6 @@
 		>	![OP_2.2.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_2.2.png)
 		*	Imputing mean with help of SkLearn
 		>	![OP_2.3.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_2.3.png)
-	
+3.	Regression using SciKitLearn
+	-	[Generalized Linear Models](https://scikit-learn.org/stable/modules/linear_model.html#generalized-linear-models)	
+	-	
