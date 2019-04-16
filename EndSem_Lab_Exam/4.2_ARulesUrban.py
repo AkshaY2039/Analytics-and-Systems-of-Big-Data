@@ -671,9 +671,17 @@ with open ('./HealthIndicatorONE.csv') as csvdata:
 			if (row[i] in Attributes[str (i)]) == False: 
 				Attributes[str (i)][row[i]] = len (Attributes[str (i)].keys())
 		datarow = []
-		try:
+		try: 
 			for i in attrIndexUrban: 
-				datarow.append (Attributes[str (i)][row[i]])
+				if (Attributes[str (i)][row[i]]>50):
+					temp = "H" + str(i)
+					datarow.append (temp)
+				else:
+					if (Attributes[str (i)][row[i]]>30):
+						temp = "M" + str(i)
+					else:
+						temp = "L" + str(i)
+				datarow.append (temp)
 			txnDataUrban.append (datarow)
 		except ValueError: 
 			pass
@@ -698,5 +706,5 @@ print ("Association Rule between Urban Mortality Rates")
 print ("Considered Features : ", featsUrban, "\n\n")
 # print (txnDataUrban)
 relim_input1 = itemmining.get_relim_input (txnDataUrban)
-report1 = itemmining.relim (relim_input1, min_support = 40)
+report1 = itemmining.relim (relim_input1, min_support = 120)
 print (report1, "\n")

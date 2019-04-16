@@ -660,6 +660,7 @@ Attributes = {
 
 entityIndex = [594,595,596,601,604,609,610,611,629,630,635,636]
 attrIndexRural = [594,595,596,601,604,609,610,611,629,630,635,636]
+temp = []
 
 # Loading Data
 print ("Data Loading Started"), 
@@ -673,7 +674,15 @@ with open ('./HealthIndicatorONE.csv') as csvdata:
 		datarow = []
 		try: 
 			for i in attrIndexRural: 
-				datarow.append (Attributes[str (i)][row[i]])
+				if (Attributes[str (i)][row[i]]>50):
+					temp = "H" + str(i)
+					datarow.append (temp)
+				else:
+					if (Attributes[str (i)][row[i]]>30):
+						temp = "M" + str(i)
+					else:
+						temp = "L" + str(i)
+				datarow.append (temp)
 			txnDataRural.append (datarow)
 		except ValueError: 
 			pass
@@ -698,5 +707,5 @@ print ("Association Rule between Rural Mortality Rates")
 print ("Considered Features : ", featsRural, "\n\n")
 # print (txnDataRural)
 relim_input = itemmining.get_relim_input (txnDataRural)
-report = itemmining.relim (relim_input, min_support = 40)
+report = itemmining.relim (relim_input, min_support = 120)
 print (report, "\n")
