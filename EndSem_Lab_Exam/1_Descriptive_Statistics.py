@@ -3,6 +3,7 @@
 import numpy
 import csv
 import pandas
+import matplotlib.pyplot as plt
 
 dataAttributes = []
 
@@ -654,8 +655,18 @@ Attributes = {
 	"644": {},	# ZZ_Sex_Ratio_At_Birth_Urban_Upper_Limit
 }
 
-entityIndex = [9,10,11,18,19,20,30,31,32,33,34,35]
-attributesIndex = [9,10,11,18,19,20,30,31,32,33,34,35]
+entityIndex = [
+				# 9,10,11,
+				# 18,19,20,
+				30,31,32,
+				# 33,34,35
+				]
+attributesIndex = [
+					# 9,10,11,
+					# 18,19,20,
+					30,31,32,
+					# 33,34,35
+					]
 
 # Loading Data
 print ("Data Loading Started"), 
@@ -675,5 +686,66 @@ with open ('./HealthIndicatorONE.csv') as csvdata:
 			pass
 print ("Done Loading Data\n")
 
+feats = [
+		# "AA_Population_Total",
+		# "AA_Population_Rural",
+		# "AA_Population_Urban",
+		# "AA_Children_12_23_Months_Total",
+		# "AA_Children_12_23_Months_Rural",
+		# "AA_Children_12_23_Months_Urban",
+		"BB_Population_Below_Age_15_Years_Total",
+		"BB_Population_Below_Age_15_Years_Rural",
+		"BB_Population_Below_Age_15_Years_Urban",
+		# "BB_Dependency_Ratio_Total",
+		# "BB_Dependency_Ratio_Rural",
+		# "BB_Dependency_Ratio_Urban"
+		]
+
 dataframe = pandas.DataFrame (dataAttributes)
+print ("\n\nFeatures: ", feats)
+print ("Means")
 print (dataframe.mean())
+
+print ("Features: ", feats)
+print ("\n\nMedian")
+print (dataframe.median())
+
+print ("\n\nFeatures: ", feats)
+print ("Mode")
+print (dataframe.mode())
+
+print ("\n\nFeatures: ", feats)
+print ("Standard Deviation")
+print (dataframe.std())
+
+print ("\n\nFeatures: ", feats)
+print ("Lower Limit")
+print (dataframe.min())
+print ("Upper Limit")
+print (dataframe.max())
+
+print ("\n\nFeatures: ", feats)
+print ("Complete Description")
+print (dataframe.describe())
+
+dataframe.plot()
+plt.show()
+
+dataframe.plot.bar()
+plt.show()
+
+dataframe.plot.hist(bins=20)
+plt.show()
+
+dataframe.plot.box()
+plt.show()
+
+dataframe.plot.pie(x=0, y=1)
+plt.show()
+
+dataframe.plot.scatter(x=0, y=1)
+plt.show()
+dataframe.plot.scatter(x=0, y=2)
+plt.show()
+dataframe.plot.scatter(x=1, y=2)
+plt.show()
