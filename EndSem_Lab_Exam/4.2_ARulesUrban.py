@@ -1,12 +1,10 @@
-# PyMining - Item Mining
+#	Association Rule using MLXTEND Apriori
 
-# !/usr/bin/python
-
-# relim for fim from pymining
-# pymining currently supports relim, sam and fp-growth
 import numpy
 import csv
-from pymining import itemmining
+import pandas
+from mlxtend.preprocessing import TransactionEncoder
+from mlxtend.frequent_patterns import apriori
 
 txnDataUrban = []
 
@@ -705,6 +703,14 @@ featsUrban = [
 print ("Association Rule between Urban Mortality Rates")
 print ("Considered Features : ", featsUrban, "\n\n")
 # print (txnDataUrban)
-relim_input1 = itemmining.get_relim_input (txnDataUrban)
-report1 = itemmining.relim (relim_input1, min_support = 120)
-print (report1, "\n")
+
+# convert dataset into dataframe
+te = TransactionEncoder()
+te_ary = te.fit(txnDataUrban).transform(txnDataUrban)
+df = pandas.DataFrame(te_ary, columns=te.columns_)
+
+print(apriori(df, min_support=0.50, use_colnames=True))
+
+# relim_input1 = itemmining.get_relim_input (txnDataUrban)
+# report1 = itemmining.relim (relim_input1, min_support = 120)
+# print (report1, "\n")
