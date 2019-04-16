@@ -12,8 +12,8 @@
 
 ##	Solution
 1.	Descriptive Statistics using PANDAS
-	-	[dataframe](https://pandas.pydata.org/pandas-docs/stable/reference/frame.html)
-	-	[visualization](https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html)
+	-	basic statistics using [dataframe](https://pandas.pydata.org/pandas-docs/stable/reference/frame.html) from pandas
+	-	plots form the [visualization](https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html) support of pandas
 	-	Output :
 		>	![OP_1.0.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_1.0.png)
 		>	![OP_1.1.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_1.1.png)
@@ -41,7 +41,15 @@
 	-	[Polynomial Features Preprocessing](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.PolynomialFeatures.html)
 	-	[Ridge Regression using polynomial Attributes](https://scikit-learn.org/stable/auto_examples/linear_model/plot_polynomial_interpolation.html)
 	-	Output :
-		>	![OP_1.10.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_3.1.png)
+		>	![OP_3.1.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_3.1.png)
 4.	Association Rule for Urban and Rural Mortality Rate
-	-	
-	
+	-	Reading data and transforming it into categorical data
+		-	L --> Low Mortality Rate (0-30)
+		-	M --> Moderate Mortality Rate (30-50)
+		-	H --> High Mortality Rate (50 above)
+	-	To avoid the consideration of different data points of different columns as same, column number is being added to the transformed data
+	-	[Using Transaction Encoder](http://rasbt.github.io/mlxtend/user_guide/preprocessing/TransactionEncoder/), the transactions are encoded and the [Using MlXtend Apriori](http://rasbt.github.io/mlxtend/user_guide/frequent_patterns/apriori/) rules are generated with support of 50% and above.
+	-	Output :
+		>	![OP_4.1.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_4.1.png)
+		>	![OP_4.2.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_4.2.png)
+5.	
