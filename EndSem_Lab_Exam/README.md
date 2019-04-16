@@ -16,32 +16,24 @@
 	-	[visualization](https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html)
 	-	Output :
 		>	![OP_1.0.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_1.0.png)
-			-	Output :
 		>	![OP_1.1.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_1.1.png)
-			-	Output :
 		>	![OP_1.2.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_1.2.png)
-			-	Output :
 		>	![OP_1.3.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_1.3.png)
-			-	Output :
 		>	![OP_1.4.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_1.4.png)
-			-	Output :
 		>	![OP_1.5.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_1.5.png)
-			-	Output :
 		>	![OP_1.6.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_1.6.png)
-			-	Output :
 		>	![OP_1.7.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_1.7.png)
-			-	Output :
 		>	![OP_1.8.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_1.8.png)
-			-	Output :
 		>	![OP_1.9.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_1.9.png)
-			-	Output :
 		>	![OP_1.10.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_1.10.png)
 2.	Handling Missing Data
 	-	Using PANDAS - [Working with missing data](https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html)
 	-	Using SkLearn - [Imputation of missing values](https://scikit-learn.org/stable/modules/impute.html)
 	-	The techniques of handling missing values are :
 		*	Remove Rows With Missing Values
+		>	![OP_2.1.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_2.1.png)
 		*	Fill NA Forward or Backward
-		*	Replace NaN or NA with a Scalar Value
-	
+		>	![OP_2.2.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_2.2.png)
+		*	Imputing mean with help of SkLearn
+		>	![OP_2.3.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_2.3.png)
 	
