@@ -52,4 +52,6 @@
 	-	Output :
 		>	![OP_4.1.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_4.1.png)
 		>	![OP_4.2.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_4.2.png)
-5.	
+5.	Parallelized version of the Hash based variant of the Apriori algorithm using Map Reduce framework for frequent itemset mining
+	-	Using Spark Framework
+	-	
