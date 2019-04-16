@@ -11,4 +11,37 @@
 5.	Develop a parallelized version of the Hash based variant of the Apriori algorithm using Map Reduce framework for frequent itemset mining.
 
 ##	Solution
-1.	
+1.	Descriptive Statistics using PANDAS
+	-	[dataframe](https://pandas.pydata.org/pandas-docs/stable/reference/frame.html)
+	-	[visualization](https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html)
+	-	Output :
+		>	![OP_1.0.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_1.0.png)
+			-	Output :
+		>	![OP_1.1.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_1.1.png)
+			-	Output :
+		>	![OP_1.2.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_1.2.png)
+			-	Output :
+		>	![OP_1.3.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_1.3.png)
+			-	Output :
+		>	![OP_1.4.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_1.4.png)
+			-	Output :
+		>	![OP_1.5.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_1.5.png)
+			-	Output :
+		>	![OP_1.6.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_1.6.png)
+			-	Output :
+		>	![OP_1.7.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_1.7.png)
+			-	Output :
+		>	![OP_1.8.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_1.8.png)
+			-	Output :
+		>	![OP_1.9.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_1.9.png)
+			-	Output :
+		>	![OP_1.10.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_1.10.png)
+2.	Handling Missing Data
+	-	Using PANDAS - [Working with missing data](https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html)
+	-	Using SkLearn - [Imputation of missing values](https://scikit-learn.org/stable/modules/impute.html)
+	-	The techniques of handling missing values are :
+		*	Remove Rows With Missing Values
+		*	Fill NA Forward or Backward
+		*	Replace NaN or NA with a Scalar Value
+	
+	
