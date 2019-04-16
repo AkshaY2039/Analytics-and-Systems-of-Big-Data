@@ -8,7 +8,6 @@ import numpy
 import csv
 from pymining import itemmining
 
-txnDataRural = []
 txnDataUrban = []
 
 # list of Attributes
@@ -659,8 +658,7 @@ Attributes = {
 	"644": {},	# ZZ_Sex_Ratio_At_Birth_Urban_Upper_Limit
 }
 
-entityIndex = [594,595,596,601,604,609,610,611,629,630,635,636,597,598,599,602,605,612,613,614,631,632,637,638]
-attrIndexRural = [594,595,596,601,604,609,610,611,629,630,635,636]
+entityIndex = [597,598,599,602,605,612,613,614,631,632,637,638]
 attrIndexUrban = [597,598,599,602,605,612,613,614,631,632,637,638]
 
 # Loading Data
@@ -673,31 +671,13 @@ with open ('./HealthIndicatorONE.csv') as csvdata:
 			if (row[i] in Attributes[str (i)]) == False: 
 				Attributes[str (i)][row[i]] = len (Attributes[str (i)].keys())
 		datarow = []
-		try: 
-			for i in attrIndexRural: 
-				datarow.append (Attributes[str (i)][row[i]])
-			txnDataRural.append (datarow)
+		try:
 			for i in attrIndexUrban: 
 				datarow.append (Attributes[str (i)][row[i]])
 			txnDataUrban.append (datarow)
 		except ValueError: 
 			pass
 print ("Done Loading Data\n")
-
-featsRural = [
-				"YY_Infant_Mortality_Rate_Imr_Rural_Person",
-				"YY_Infant_Mortality_Rate_Imr_Rural_Male",
-				"YY_Infant_Mortality_Rate_Imr_Rural_Female",
-				"YY_Neo_Natal_Mortality_Rate_Rural",
-				"YY_Post_Neo_Natal_Mortality_Rate_Rural",
-				"YY_Under_Five_Mortality_Rate_U5MR_Rural_Person",
-				"YY_Under_Five_Mortality_Rate_U5MR_Rural_Male",
-				"YY_Under_Five_Mortality_Rate_U5MR_Rural_Female",
-				"ZZ_Infant_Mortality_Rate_Rural_Lower_Limit",
-				"ZZ_Infant_Mortality_Rate_Rural_Upper_Limit",
-				"ZZ_Under_Five_Mortality_Rate_U5MR_Rural_Lower_Limit",
-				"ZZ_Under_Five_Mortality_Rate_U5MR_Rural_Upper_Limit"
-				]
 
 featsUrban = [
 				"YY_Infant_Mortality_Rate_Imr_Urban_Person",
@@ -714,16 +694,9 @@ featsUrban = [
 				"ZZ_Under_Five_Mortality_Rate_U5MR_Urban_Upper_Limit"
 				]
 
-print ("Association Rule between Rural Mortality Rates")
-print ("Considered Features : ", featsRural, "\n\n")
-# print (txnDataRural)
-relim_input = itemmining.get_relim_input (txnDataRural)
-report = itemmining.relim (relim_input, min_support = 50)
-print (report, "\n\n")
-
 print ("Association Rule between Urban Mortality Rates")
 print ("Considered Features : ", featsUrban, "\n\n")
 # print (txnDataUrban)
 relim_input1 = itemmining.get_relim_input (txnDataUrban)
-report1 = itemmining.relim (relim_input1, min_support = 50)
-print (report1)
+report1 = itemmining.relim (relim_input1, min_support = 40)
+print (report1, "\n")
