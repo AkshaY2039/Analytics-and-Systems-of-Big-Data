@@ -1,11 +1,12 @@
-#	Apriori
-##	Libraries/References Explored
+#	Problem Section 01
+##	1.1 Apriori
+###	Libraries/References Explored
 *	[Selecting the right interestingness measure for association patterns](./Interestingness_Measures_in_Patterns.pdf)
 *	[ML xtend](http://rasbt.github.io/mlxtend/)
 *	[Efficient Apriori](https://github.com/tommyod/Efficient-Apriori)
 *	[Apyori](https://github.com/ymoch/apyori)
 *	Project to follow : [Association_Rule_Learning_Python](https://github.com/StephanieStallworth/Association_Rule_Learning_Python)
-##	Definitions
+###	Definitions
 *	Support
 	>	The support of a rule is the frequency of which the LHS and RHS appear together in the dataset. If X -> Y is a rule, then the support is P(Y and X).
 *	Confidence
@@ -24,12 +25,12 @@
 	>	Added Value = max (P(B|A) - P(B), P(A|B) - P(A))
 -- --
 
-#	Bayesian Classifier
-##	Libraries/References Explored
+##	1.2 Bayesian Classifier
+###	Libraries/References Explored
 *	[The Best Metric to Measure Accuracy of Classification Models](https://www.kdnuggets.com/2016/12/best-metric-measure-accuracy-classification-models.html/)
 *	[The Basics of Classifier Evaluation: Part 1](https://www.svds.com/the-basics-of-classifier-evaluation-part-1/)
 *	[Classification: ROC Curve and AUC](https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc)
-##	Definitions
+###	Definitions
 Confusion Matrix | Observed True | Observed False
 ----|---------------|---------------
 Actual True | True Positive (TP) | False Negative (FN)
@@ -60,11 +61,11 @@ Actual False | False Positive (FP) | True Negative (TN)
 	>	Similar to Correlation Coefficient, the range of values of MCC lie between -1 to +1. A model with a score of +1 is a perfect model and -1 is a poor model. This property is one of the key usefulness of MCC as it leads to easy interpretability.
 -- --
 
-#	K-Means Clustering
-##	Libraries/References Explored
+##	1.3 K-Means Clustering
+###	Libraries/References Explored
 *	[Clustering performance evaluation](https://scikit-learn.org/stable/modules/clustering.html#clustering-evaluation)
 *	[Cluster_analysis](https://en.wikipedia.org/wiki/Cluster_analysis#Internal_evaluation)
-##	Definitions
+###	Definitions
 *	Radius
 	>	The radius of a cluster is the maximum distance between all the points and the centroid. Preference is to combine the two clusters whose resulting cluster has the lowest radius.
 *	Density
@@ -73,3 +74,18 @@ Actual False | False Positive (FP) | True Negative (TN)
 *	Silhouette coefficient
 	>	The silhouette coefficient contrasts the average distance to elements in the same cluster with the average distance to elements in other clusters. Objects with a high silhouette value are considered well clustered, objects with a low value may be outliers. This index works well with k-means clustering, and is also used to determine the optimal number of clusters.
 -- --
+
+#	Problem Section 02
+##	Frequent Itemset Mining
+###	Libraries/References Explored
+*	SciKit Learn
+	-	No Support for FIM
+*	[mlxtend](https://pypi.org/project/mlxtend/)
+*	[orange](https://docs.biolab.si/2/)
+	-	[orange associate](https://orange3-associate.readthedocs.io/en/latest/scripting.html)
+*	[fim](https://pypi.org/project/fim/)
+*	[pymining](https://pypi.org/project/pymining/)
+*	[Efficient Apriori](https://github.com/tommyod/Efficient-Apriori)
+*	[Apyori](https://github.com/ymoch/apyori)
+-- --
+

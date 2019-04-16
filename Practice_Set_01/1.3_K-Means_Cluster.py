@@ -19,7 +19,7 @@ entityIndex = [1,2]
 
 # Loading Data
 print ("Data Loading Started"), 
-with open ('../../DataSets/number_of_cigarettes_per_day.csv') as csvdata: 
+with open ('../DataSets/number_of_cigarettes_per_day.csv') as csvdata: 
 	readCSV = csv.reader (csvdata, delimiter=',')
 	next (readCSV)	# Skipping Header content
 	for row in readCSV: 
