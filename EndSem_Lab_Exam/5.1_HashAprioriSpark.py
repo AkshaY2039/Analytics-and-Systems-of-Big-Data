@@ -1,36 +1,34 @@
 # Hash Apriori using Spark
 
 from __future__ import division
-from collections import namedtuple
-from collections import Counter
+from collections import namedtuple, Counter
 from math import ceil
 from itertools import combinations
 from pyspark import SparkContext
 
 global minSupport
-global datasetSize
-global freq_items
+global dsSize
+global freqItems
 global global_dataset
 
-maxItems = 0
-numRules = 0
-minSupport =10  # in percentage
-minConfidence = 15 # in percentage
-datasetSize = 0
+maximumItems = 0
+minSupport = 15  # in percentage
+minConfidence = 10 # in percentage
+dsSize = 0
 
 def readData (file):
-	global datasetSize
-	global maxItems
+	global dsSize
+	global maximumItems
 	items = set ()
 	fd = open (file, 'r')
 	x = list ()
 	for itemset in fd:
-		a=list (map (float, itemset.strip ().split (",")))
+		a=list (map (int, itemset.strip ().split (",")))
 		con  = frozenset (a)
 		items = items | con
-		datasetSize +=1
+		dsSize +=1
 		x.append (a)
-	maxItems = len (items)
+	maximumItems = len (items)
 	return x
 
 def nextFrequent (itemsets,dataset):
@@ -64,7 +62,7 @@ def nextFrequent_hash (itemsets,i1):
 			for k in range (j+1,len (i)):
 				hash = (i[j]*10 + i[k])%bucket_size
 				hashtable[hash].append ( (i[j],i[k]))
-	print ("\n\n Hashtable:\n")
+	print ("\n\n Hash Table:\n")
 	for i in range (0,bucket_size):
 		x = Counter (hashtable[i])
 		print (x)
@@ -76,41 +74,41 @@ def nextFrequent_hash (itemsets,i1):
 def apriori (indices):
 	global global_dataset
 	print (indices)
-	global freq_items
+	global freqItems
 	dataset = global_dataset[indices[0]:indices[1]]
 	items = list ()
 	freq =list ()
-	for i in range (2,maxItems):
+	for i in range (2,maximumItems):
 		if i<3:
 			freq = nextFrequent_hash (dataset,i)
-			print ("\n\n\n\nfreq = ", freq)
+			print ("\n\nFreq = ", freq)
 		else:
 			freq = nextFrequent (freq,dataset)
-			print ("\n\n\n\nfreq = ", freq)
+			print ("\n\nFreq = ", freq)
 		items = items + freq
 		if len (freq)<=1:
 			break
-	print ("items=", items)
-	freq_items = freq_items + items
-	print ("\nfrequent items: ")
+	print ("Items =", items)
+	freqItems = freqItems + items
+	# print ("\nFrequent Items: ")
 	return items
 
 if __name__ == "__main__":
 	noOfPartition = 4
-	global_dataset = readData ("./HealthIndicatorONEtransformed.csv")
-	freq_items = list ()
+	global_dataset = readData ("./smoking_hours.csv")
+	freqItems = list ()
 	sc = SparkContext ("local", "apriori")
-	minSupport = minSupport*datasetSize/100
+	minSupport = minSupport*dsSize/100
 	size=0
 	indices = list ()
-	while size<100:
+	while size<dsSize:
 		a = size
-		b = size + datasetSize/4
+		b = size + dsSize/4
 		b=int (ceil (b))
-		if b>datasetSize:
-			b=datasetSize
+		if b>dsSize:
+			b=dsSize
 		size = b
 		indices.append ( (a,b))
 	print (indices)
-	d = sc.parallelize (indices)
+	d = sc.parallelize (indices, 4)
 	d.foreach (apriori)
