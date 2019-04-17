@@ -53,5 +53,29 @@
 		>	![OP_4.1.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_4.1.png)
 		>	![OP_4.2.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_4.2.png)
 5.	Parallelized version of the Hash based variant of the Apriori algorithm using Map Reduce framework for frequent itemset mining
-	-	Using Spark Framework
-	-	
+	-	Using Spark Framework - PySpark
+	-	Dataset used is smoking hours dataset as the implementation is only for integer type data
+	-	Dividing the dataset into partitions for parallelizing and Hashing
+		>	![OP_5.1.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_5.1.png)
+		>	![OP_5.2.png](https://raw.githubusercontent.com/AkshaY2039/Analytics-and-Systems-of-Big-Data/master/EndSem_Lab_Exam/Output_Screenshots/OP_5.2.png)
+	-	Hashing the frequent itemsets
+		```
+		def nextFrequent_hash (itemsets,i1):
+			global minSupport
+			bucket_size = 17
+			hashtable = [ [] for _ in range (0,bucket_size) ]
+			frequent = list ()
+			for i in itemsets:
+				for j in range (0, len (str (i))-1):
+					for k in range (j+1,len (i)):
+						hash = (i[j]*10 + i[k])%bucket_size
+						hashtable[hash].append ( (i[j],i[k]))
+			print ("\n\n Hash Table:\n")
+			for i in range (0,bucket_size):
+				x = Counter (hashtable[i])
+				print (x)
+				for a in x.keys ():
+					if x[a]>=minSupport:
+						frequent.append (a)
+			return frequent
+		```
