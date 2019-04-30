@@ -12,8 +12,8 @@ global freqItems
 global global_dataset
 
 maximumItems = 0
-minSupport = 15  # in percentage
-minConfidence = 10 # in percentage
+minSupport = 2  # in percentage
+minConfidence = 2 # in percentage
 dsSize = 0
 
 def readData (file):
@@ -60,7 +60,7 @@ def nextFrequent_hash (itemsets,i1):
 	for i in itemsets:
 		for j in range (0, len (str (i))-1):
 			for k in range (j+1,len (i)):
-				hash = (i[j]*10 + i[k])%bucket_size
+				hash = (i[j]*5 + i[k])%bucket_size
 				hashtable[hash].append ( (i[j],i[k]))
 	print ("\n\n Hash Table:\n")
 	for i in range (0,bucket_size):
@@ -88,9 +88,9 @@ def apriori (indices):
 		items = items + freq
 		if len (freq)<=1:
 			break
-	print ("Items =", items)
+	# print ("Items =", items)
 	freqItems = freqItems + items
-	# print ("\nFrequent Items: ")
+	print ("\nFrequent Items: ", freqItems)
 	return items
 
 if __name__ == "__main__":
