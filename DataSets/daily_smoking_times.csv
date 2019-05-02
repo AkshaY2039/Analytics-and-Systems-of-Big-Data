@@ -1,4 +1,4 @@
-Gender,Age,Time1(Floored to Hour),Time2(Floored to Hour),Time3(Floored to Hour),Time4(Floored to Hour),Time5(Floored to Hour),Time6(Floored to Hour),Time7(Floored to Hour)
+Gender,Age,Time1,Time2,Time3,Time4,Time5,Time6,Time7
 F,13,4,8,13,14,19,22,0
 M,26,7,11,13,14,19,23,3
 M,35,7,11,12,15,20,21,3
